@@ -1,0 +1,16 @@
+<div class = 'offset-col-md-5'>
+  <button type ='button' class = 'form-control btn btn-info'>Add List</button>
+</div>
+<br>
+<div class='container'>
+  <div class="box">
+    <div class='panel panel-default'>
+      <div class='panel-heading'></div>
+      <div class='panel-body'>
+        <div *ngFor='let list of dataList | async'>
+          {{list.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
