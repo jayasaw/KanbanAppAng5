@@ -129,6 +129,8 @@
       "kbn",
       "kebab-case"
     ],
+    "no-unused-variable": true,
+    "no-consecutive-blank-lines": true,
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,

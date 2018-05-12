@@ -1,7 +1,18 @@
-<h3>Task List</h3>
+<div class="taskList">
 
-<div>
-    <div *ngFor = 'let task of tasks'>
-        {{task.name}}
+    <div class="header">
+        <h3>Task List</h3>
     </div>
+
+    <div class='row listType'>
+        <div class="col-md-3" *ngFor='let task of tasks |async'>
+            <div class='panel panel-default'>
+                <div class='panel-heading'>{{task.name}}</div>
+                <div class='panel-body'>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

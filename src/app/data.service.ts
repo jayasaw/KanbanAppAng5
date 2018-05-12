@@ -2,34 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-
 @Injectable()
 export class DataService {
-  kanbanList: Kanban[];
+  public taskList: Array<TaskType> = [];
+
   constructor(private http: HttpClient) {
-    this.kanbanList = [
-      { name: 'New Tasks' },
-      { name: 'On Hold' },
-      { name: 'In Progress' },
-      { name: 'Done' }
-    ];
+    this.taskList = [{ name: 'Hold' }, { name: 'In Progress' }, { name: 'Completed' }];
   }
 
-  getKanbanList(): Observable<Kanban[]> {
+  addNewTaskList(task: TaskType): void {
 
+    this.taskList.push(task);
+  }
+
+  getTaskList(): Observable<Array<TaskType>> {
     return Observable.create((observer) => {
-      observer.next(this.kanbanList);
+      observer.next(this.taskList);
     });
 
   }
 
-  addNewTaskList(task): any {
-    const taskList = [];
-    taskList.push(task);
-  }
-
 }
 
-export interface Kanban {
+export interface TaskType {
   name: string;
 }
+
+
+

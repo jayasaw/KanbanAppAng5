@@ -8,18 +8,21 @@ import { Observable } from 'rxjs/Observable';
     styleUrls: ['./task.component.scss']
 })
 export class KbnTaskComponent implements OnInit {
-    public taskName: object;
-    constructor(private router: Router, private dataService: DataService) { }
+    public taskName: string;
+    constructor(private router: Router, private dataService: DataService) {
+
+    }
 
     public goBack() {
         this.router.navigate(['taskList']);
     }
-    public AddTaskList(task) {
-        this.dataService.addNewTaskList(task)
-            .subscribe()
+
+    public AddTaskList() {
+        this.dataService.addNewTaskList({ name: this.taskName });
+        this.router.navigate(['taskList']);
+
     }
     ngOnInit() {
-        // this.goBack();
+
     }
 }
-
