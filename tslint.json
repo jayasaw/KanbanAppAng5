@@ -120,15 +120,17 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "kbn",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "kbn",
       "kebab-case"
     ],
+    "no-unused-variable": true,
+    "no-consecutive-blank-lines": true,
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
